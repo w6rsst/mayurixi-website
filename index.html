@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MayuRixi ♡ Official Website</title>
+  <meta name="description" content="Official website of MayuRixi - VTuber, Voice Actress, Singer & Artist"/>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+  <!-- VIDEO BACKGROUND -->
+  <video autoplay muted loop playsinline class="video-background">
+    <source src="images/bg.mp4" type="video/mp4">
+  </video>
+
+  <div class="floating-stars" id="stars"></div>
+  <div class="dot-pattern top-right"></div>
+  <div class="dot-pattern bottom-left"></div>
+
+  <nav class="nav-bar" id="navbar">
+    <a class="nav-btn" onclick="showSection('home')">Home</a>
+    <a class="nav-btn" onclick="showSection('about')">About</a>
+    <a class="nav-btn" onclick="showSection('rules')">Rules</a>
+    <a class="nav-btn" onclick="showSection('schedule')">Schedule</a>
+    <a class="nav-btn" onclick="showSection('emotes')">Emotes</a>
+    <a class="nav-btn" onclick="showSection('links')">Links</a>
+    <a class="nav-btn" onclick="showSection('credits')">Credits</a>
+    <a class="nav-btn" onclick="showSection('faq')">FAQ</a>
+  </nav>
+
+  <button class="mobile-menu-btn" id="mobileBtn" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- HOME -->
+  <section class="section home-section active" id="sec-home">
+    <div class="home-character">
+      <div class="character-glow"></div>
+      <img src="images/hero.png" alt="MayuRixi" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px; position: relative; z-index: 2;">
+    </div>
+    <h1 class="home-logo">MayuRixi</h1>
+    <p class="home-subtitle">♡ VTuber ♡</p>
+    <p class="home-tagline">✧ Voice Actress ✧ Singer ✧ Artist ✧ — AR | EN | JP</p>
+
+    <div class="nav-grid">
+      <button class="nav-grid-btn" onclick="showSection('about')">About</button>
+      <button class="nav-grid-btn" onclick="showSection('rules')">Rules</button>
+      <button class="nav-grid-btn" onclick="showSection('schedule')">Schedule</button>
+      <button class="nav-grid-btn" onclick="showSection('emotes')">Emotes</button>
+      <button class="nav-grid-btn" onclick="showSection('links')">Links</button>
+      <button class="nav-grid-btn" onclick="showSection('credits')">Credits</button>
+      <button class="nav-grid-btn" onclick="showSection('faq')">FAQ</button>
+    </div>
+
+    <div class="social-row">
+      <a class="social-icon" href="https://www.twitch.tv/mayurixi" target="_blank" title="Twitch">
+        <svg viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+      </a>
+      <a class="social-icon" href="https://www.youtube.com/@mayurixi" target="_blank" title="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg>
+      </a>
+      <a class="social-icon" href="https://twitter.com/mayurixi" target="_blank" title="X/Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="social-icon" href="https://www.tiktok.com/@mayurixi" target="_blank" title="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      </a>
+      <a class="social-icon" href="https://discord.gg/mayurixi" target="_blank" title="Discord">
+        <svg viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561 19.9312 19.9312 0 005.9932 3.0397.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286 19.8975 19.8975 0 006.0022-3.0397.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286z"/></svg>
+      </a>
+      <a class="social-icon" href="https://www.instagram.com/mayurixi" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+    </div>
+
+    <div class="special-btns">
+      <a class="special-btn" href="https://www.twitch.tv/mayurixi" target="_blank">📺 Watch Live</a>
+      <button class="special-btn" onclick="showSection('schedule')">📅 Schedule</button>
+    </div>
+
+    <footer class="footer">©MayuRixi. All rights reserved. ♡</footer>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="sec-about">
+    <div class="inner-section">
+      <div class="section-header">
+        <h2 class="section-title">About</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-layout">
+        <div>
+          <div class="card">
+            <div class="card-title">♡ About MayuRixi</div>
+            <p>MayuRixi is a multilingual VTuber, voice actress, singer, and artist who streams in Arabic, English, and Japanese. Known for cozy gaming streams, creative art sessions, and connecting with her community through heartfelt content.</p>
+            <p style="margin-top:12px;">Whether she's diving into horror games, singing her favorite songs, or creating beautiful art live on stream — Mayu always brings warmth and good vibes to every broadcast. ✧</p>
+          </div>
+          <div class="info-grid">
+            <div class="info-item"><div class="info-label">Languages</div><div class="info-value">AR | EN | JP</div></div>
+            <div class="info-item"><div class="info-label">Content</div><div class="info-value">Gaming · Art · Singing</div></div>
+            <div class="info-item"><div class="info-label">Platform</div><div class="info-value">Twitch & YouTube</div></div>
+            <div class="info-item"><div class="info-label">Fan Name</div><div class="info-value">♡ Mayulings ♡</div></div>
+          </div>
+          <div class="card" style="margin-top:20px;">
+            <div class="card-title">💌 Contact</div>
+            <p>For business inquiries, collaborations, or sponsorship opportunities, please reach out via DM on Twitter or Discord!</p>
+          </div>
+        </div>
+        <div class="about-image">
+          <div class="placeholder-art">✧</div>
+        </div>
+      </div>
+      <button class="back-btn" onclick="showSection('home')">← Back</button>
+    </div>
+    <footer class="footer">©MayuRixi. All rights reserved. ♡</footer>
+  </section>
+
+  <!-- RULES -->
+  <section class="section" id="sec-rules">
+    <div class="inner-section">
+      <div class="section-header">
+        <h2 class="section-title">【 Rules 】</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Please follow these rules to keep the stream a safe and happy place! ♡</p>
+      </div>
+      <div class="rules-grid">
+        <div class="rule-card"><div class="rule-icon do">♡</div><div><span class="rule-label">Arabic | English | Japanese</span><span class="rule-text">All three languages are welcome!</span></div></div>
+        <div class="rule-card"><div class="rule-icon do">♡</div><div><span class="rule-label">Remember Allah</span><span class="rule-text">اذكروا الله ♡</span></div></div>
+        <div class="rule-card"><div class="rule-icon do">♡</div><div><span class="rule-label">Respect Mods</span><span class="rule-text">They work hard to keep chat safe!</span></div></div>
+        <div class="rule-card"><div class="rule-icon do">♡</div><div><span class="rule-label">Bring Good Vibes</span><span class="rule-text">Positivity only! Let's have fun~</span></div></div>
+        <div class="rule-card"><div class="rule-icon do">♡</div><div><span class="rule-label">Stay on Topic</span><span class="rule-text">Keep it relevant to the stream</span></div></div>
+        <div class="rule-card"><div class="rule-icon dont">✕</div><div><span class="rule-label">No Links</span><span class="rule-text">Unless asked for by Mayu</span></div></div>
+        <div class="rule-card"><div class="rule-icon dont">✕</div><div><span class="rule-label">No Drama</span><span class="rule-text">Keep it peaceful~</span></div></div>
+        <div class="rule-card"><div class="rule-icon dont">✕</div><div><span class="rule-label">No Spoilers</span><span class="rule-text">Let Mayu experience it fresh!</span></div></div>
+        <div class="rule-card"><div class="rule-icon dont">✕</div><div><span class="rule-label">No Self Promo</span><span class="rule-text">Please don't advertise here</span></div></div>
+        <div class="rule-card"><div class="rule-icon dont">✕</div><div><span class="rule-label">No Backseating</span><span class="rule-text">Unless Mayu asks for help!</span></div></div>
+        <div class="rule-card"><div class="rule-icon dont">✕</div><div><span class="rule-label">No Trauma Dumping</span><span class="rule-text">Keep chat comfy for everyone</span></div></div>
+        <div class="rule-card"><div class="rule-icon dont">✕</div><div><span class="rule-label">No Hate / Harassment</span><span class="rule-text">Zero tolerance policy</span></div></div>
+      </div>
+      <button class="back-btn" onclick="showSection('home')">← Back</button>
+    </div>
+    <footer class="footer">©MayuRixi. All rights reserved. ♡</footer>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="section" id="sec-schedule">
+    <div class="inner-section">
+      <div class="section-header">
+        <h2 class="section-title">Schedule</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Check back for stream times! ♡</p>
+      </div>
+      <div class="schedule-grid">
+        <div class="schedule-day"><div class="schedule-day-name">Mon</div><div class="schedule-content">—</div></div>
+        <div class="schedule-day"><div class="schedule-day-name">Tue</div><div class="schedule-content">—</div></div>
+        <div class="schedule-day active-day"><div class="schedule-day-name">Wed</div><div class="schedule-content">Gaming ♡</div></div>
+        <div class="schedule-day"><div class="schedule-day-name">Thu</div><div class="schedule-content">—</div></div>
+        <div class="schedule-day active-day"><div class="schedule-day-name">Fri</div><div class="schedule-content">Art Stream ✧</div></div>
+        <div class="schedule-day active-day"><div class="schedule-day-name">Sat</div><div class="schedule-content">Cozy Games</div></div>
+        <div class="schedule-day"><div class="schedule-day-name">Sun</div><div class="schedule-content">—</div></div>
+      </div>
+      <div class="card" style="margin-top:30px;text-align:center;">
+        <p>Schedule may change! Follow on <a href="https://twitter.com/mayurixi" target="_blank" style="color:var(--accent)">Twitter</a> for updates~ ♡</p>
+      </div>
+      <button class="back-btn" onclick="showSection('home')">← Back</button>
+    </div>
+    <footer class="footer">©MayuRixi. All rights reserved. ♡</footer>
+  </section>
+
+  <!-- EMOTES -->
+  <section class="section" id="sec-emotes">
+    <div class="inner-section">
+      <div class="section-header">
+        <h2 class="section-title">Emotes</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Subscriber Rewards! ♡</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="card-title" style="justify-content:center;">✧ Sub Emotes ✧</div>
+        <p style="margin-bottom:20px;">Subscribe to unlock these cute emotes!</p>
+        <div class="emotes-showcase">
+          <div class="emote-item">💙</div><div class="emote-item">✨</div><div class="emote-item">🥺</div>
+          <div class="emote-item">😭</div><div class="emote-item">🤣</div><div class="emote-item">💀</div>
+          <div class="emote-item">👀</div><div class="emote-item">🫶</div><div class="emote-item">🎨</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">🎁 Bit Rewards</div>
+        <div class="info-grid">
+          <div class="info-item"><div class="info-label">50 Bits</div><div class="info-value">When Boys</div></div>
+          <div class="info-item"><div class="info-label">99 Bits</div><div class="info-value">Aizen</div></div>
+          <div class="info-item"><div class="info-label">111 Bits</div><div class="info-value">Eren</div></div>
+          <div class="info-item"><div class="info-label">555 Bits</div><div class="info-value">Levi</div></div>
+          <div class="info-item"><div class="info-label">666 Bits</div><div class="info-value">Muzan Michael J.</div></div>
+          <div class="info-item"><div class="info-label">6666 Bits</div><div class="info-value">Luffy Gear 5th</div></div>
+        </div>
+      </div>
+      <button class="back-btn" onclick="showSection('home')">← Back</button>
+    </div>
+    <footer class="footer">©MayuRixi. All rights reserved. ♡</footer>
+  </section>
+
+  <!-- LINKS -->
+  <section class="section" id="sec-links">
+    <div class="inner-section">
+      <div class="section-header">
+        <h2 class="section-title">Links</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="links-grid">
+        <a class="link-card" href="https://www.twitch.tv/mayurixi" target="_blank"><div class="link-card-icon">📺</div><div><div class="link-card-name">Twitch</div><div class="link-card-desc">Watch me live!</div></div></a>
+        <a class="link-card" href="https://www.youtube.com/@mayurixi" target="_blank"><div class="link-card-icon">▶️</div><div><div class="link-card-name">YouTube</div><div class="link-card-desc">Videos & clips</div></div></a>
+        <a class="link-card" href="https://twitter.com/mayurixi" target="_blank"><div class="link-card-icon">🐦</div><div><div class="link-card-name">Twitter / X</div><div class="link-card-desc">Updates & art</div></div></a>
+        <a class="link-card" href="https://www.tiktok.com/@mayurixi" target="_blank"><div class="link-card-icon">🎵</div><div><div class="link-card-name">TikTok</div><div class="link-card-desc">Short clips</div></div></a>
+        <a class="link-card" href="https://discord.gg/mayurixi" target="_blank"><div class="link-card-icon">💬</div><div><div class="link-card-name">Discord</div><div class="link-card-desc">Join the community!</div></div></a>
+        <a class="link-card" href="https://www.instagram.com/mayurixi" target="_blank"><div class="link-card-icon">📷</div><div><div class="link-card-name">Instagram</div><div class="link-card-desc">Photos & reels</div></div></a>
+      </div>
+      <div class="card" style="margin-top:30px;text-align:center;">
+        <div class="card-title" style="justify-content:center;">💝 Support</div>
+        <p>Donations are very much appreciated! Every donation goes into improving the stream ♡</p>
+      </div>
+      <button class="back-btn" onclick="showSection('home')">← Back</button>
+    </div>
+    <footer class="footer">©MayuRixi. All rights reserved. ♡</footer>
+  </section>
+
+  <!-- CREDITS -->
+  <section class="section" id="sec-credits">
+    <div class="inner-section">
+      <div class="section-header">
+        <h2 class="section-title">Credits</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="credits-grid">
+        <div class="credit-card"><div class="credit-role">Model Mama</div><div class="credit-name">miikutea_</div><a class="credit-link" href="https://twitter.com/miikutea_" target="_blank">@miikutea_</a></div>
+        <div class="credit-card"><div class="credit-role">PFP & Banner & Panels</div><div class="credit-name">Xiiri96</div><a class="credit-link" href="https://twitter.com/Xiiri96" target="_blank">@Xiiri96</a></div>
+        <div class="credit-card"><div class="credit-role">Flower Panel</div><div class="credit-name">ro_artist</div><a class="credit-link" href="https://twitter.com/ro_artist" target="_blank">@ro_artist</a></div>
+      </div>
+      <button class="back-btn" onclick="showSection('home')">← Back</button>
+    </div>
+    <footer class="footer">©MayuRixi. All rights reserved. ♡</footer>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="sec-faq">
+    <div class="inner-section">
+      <div class="section-header">
+        <h2 class="section-title">FAQ</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What do you stream? <span class="faq-arrow">▾</span></div><div class="faq-answer">I stream a variety of content including gaming (horror, cozy games, RPGs), art streams, singing, and chatting sessions! Come hang out~ ♡</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What languages do you speak? <span class="faq-arrow">▾</span></div><div class="faq-answer">I speak Arabic, English, and Japanese! My streams are multilingual and everyone is welcome regardless of language ✧</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Can I use your art / clips? <span class="faq-arrow">▾</span></div><div class="faq-answer">Please ask for permission first before using any of my content. Fan art is always welcome and appreciated! Use the appropriate tags when posting ♡</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Do you do commissions? <span class="faq-arrow">▾</span></div><div class="faq-answer">Commission availability varies! Please check my Twitter for the latest updates on commission status.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How can I support you? <span class="faq-arrow">▾</span></div><div class="faq-answer">You can support me by following, subscribing on Twitch, donating bits, or simply hanging out in chat! Every bit of support means the world to me 💙</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Can I collab with you? <span class="faq-arrow">▾</span></div><div class="faq-answer">I'm open to collaborations with fellow creators! Please reach out via DM on Twitter or Discord for any collab inquiries ✧</div></div>
+      <button class="back-btn" onclick="showSection('home')">← Back</button>
+    </div>
+    <footer class="footer">©MayuRixi. All rights reserved. ♡</footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
