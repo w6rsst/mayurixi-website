@@ -34,7 +34,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: hidden; overflow-y: scroll; }
 
 body {
   font-family: var(--font-main);
@@ -50,6 +50,7 @@ body {
   color: var(--text-dark);
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: scroll; /* Force scrollbar permanently to prevent layout shifting */
   position: relative;
 }
 
@@ -817,19 +818,30 @@ body {
 
 /* ── TRANSITION ANIMATIONS ── */
 .fade-in {
-  animation: sectionFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: clipReveal 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  z-index: 2 !important;
 }
 
 .fade-out {
-  animation: sectionFadeOut 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  /* Fades out slightly in the background while new page expands over it */
+  animation: sectionFadeOut 0.6s ease forwards;
+  position: absolute !important;
+  top: 0; left: 0; width: 100%;
+  z-index: 1 !important;
 }
 
-@keyframes sectionFadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes clipReveal {
+  0% { 
+    clip-path: circle(0px at 50% 50vh);
+    opacity: 0.5;
+  }
+  100% { 
+    clip-path: circle(150vw at 50% 50vh);
+    opacity: 1;
+  }
 }
 
 @keyframes sectionFadeOut {
-  from { opacity: 1; transform: translateY(0); }
-  to { opacity: 0; transform: translateY(-15px); }
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }

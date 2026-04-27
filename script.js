@@ -27,26 +27,29 @@ function showSection(name) {
   const target = document.getElementById('sec-' + name);
   if (!target || currentActive === target) { isTransitioning = false; return; }
 
-  // Fade out current
+  // True Crossfade
   if (currentActive) {
+    // Scroll to top instantly before animating so the new page renders at the top
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    
     currentActive.classList.add('fade-out');
+    target.classList.add('active', 'fade-in');
+    
+    animateCards(target);
+    
     setTimeout(() => {
       currentActive.classList.remove('active', 'fade-out');
-      // Show target
-      target.classList.add('active', 'fade-in');
-      window.scrollTo({ top: 0 });
-      setTimeout(() => {
-        target.classList.remove('fade-in');
-        isTransitioning = false;
-      }, 500);
-    }, 350);
+      target.classList.remove('fade-in');
+      isTransitioning = false;
+    }, 600); // Wait for new 0.6s magical CSS animation to finish
   } else {
     target.classList.add('active', 'fade-in');
-    window.scrollTo({ top: 0 });
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    animateCards(target);
     setTimeout(() => {
       target.classList.remove('fade-in');
       isTransitioning = false;
-    }, 500);
+    }, 600);
   }
 
   // Navbar visibility
@@ -87,47 +90,40 @@ function toggleMobile() {
 }
 
 // ── STAGGER ANIMATION FOR CARDS ──
-function animateCards() {
-  const active = document.querySelector('.section.active');
-  if (!active) return;
-  const cards = active.querySelectorAll('.card, .rule-card, .credit-card, .faq-item, .link-card, .schedule-day, .info-item');
-  cards.forEach((card, i) => {
+function animateCards(section) {
+  if (!section) return;
+  const cards = section.querySelectorAll('.card, .rule-card, .credit-card, .faq-item, .link-card, .schedule-day, .info-item, .about-image');
+  
+  // Reset elements first
+  cards.forEach((card) => {
+    card.style.transition = 'none';
     card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    setTimeout(() => {
-      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      card.style.opacity = '1';
-      card.style.transform = 'translateY(0)';
-    }, 80 * i);
+    card.style.transform = 'translateY(25px)';
+  });
+  
+  // Trigger browser reflow to apply resets
+  void section.offsetWidth;
+  
+  // Apply staggered animation
+  cards.forEach((card, i) => {
+    card.style.transition = `opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) ${i * 40}ms, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) ${i * 40}ms`;
+    card.style.opacity = '1';
+    card.style.transform = 'translateY(0)';
   });
 }
-
-// Watch for section changes to trigger card animations
-const observer = new MutationObserver(() => {
-  const active = document.querySelector('.section.active');
-  if (active && !active.id.includes('home')) {
-    setTimeout(animateCards, 400);
-  }
-});
 
 // ── INIT ──
 document.addEventListener('DOMContentLoaded', () => {
   createStars();
 
-  // Observe section changes
-  document.querySelectorAll('.section').forEach(sec => {
-    observer.observe(sec, { attributes: true, attributeFilter: ['class'] });
-  });
-
-  // Handle hash navigation
+  // Handle hash navigation on load
   const hash = window.location.hash.replace('#', '');
   if (hash && document.getElementById('sec-' + hash)) {
-    // Delay to let page load
     setTimeout(() => showSection(hash), 100);
   }
 
-  // Add hover sound-like effect to buttons
-  document.querySelectorAll('.nav-grid-btn, .nav-btn').forEach(btn => {
+  // Add hover effect to buttons
+  document.querySelectorAll('.nav-grid-btn, .nav-btn, .special-btn').forEach(btn => {
     btn.addEventListener('mouseenter', () => {
       btn.style.transition = 'all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)';
     });
